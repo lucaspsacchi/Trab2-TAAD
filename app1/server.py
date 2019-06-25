@@ -1,0 +1,31 @@
+#serv_sock.py
+import socket
+
+HOST = 'localhost'
+PORT = 50000
+
+def server():
+
+    # Cria socket UDP
+    sock = socket.socket(socket.AF_INET, # Internet
+                        socket.SOCK_DGRAM) # UDP
+    sock.bind((HOST, PORT))
+
+    arq = open('c:/UFSCAR/7º Semestre/Top Fábio/Trab2-ClientServer/teste.txt', 'w')
+
+    while True:
+        print("Esperando envio...")
+        # Define o tamanho máximo da mensagem
+        info, addr = sock.recvfrom(1024) # Tamanho do buffer é de 1024 bytes
+        # while info[-1:] == '\0':
+        #     info = info[:-1]
+        if not info: # Não está saindo
+            break
+        # Decodifica a mensagem em ...
+        var = info.decode('utf-8')
+        print('Type:' + str(type(var)) + '\nvar: ' +  var)
+        arq.write(var)
+
+    arq.close()
+
+server()
