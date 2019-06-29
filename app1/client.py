@@ -5,7 +5,7 @@
 import socket
 import os
 
-HOST = 'localhost' #coloca o host do servidor
+HOST = '192.168.50.2' #coloca o host do servidor
 PORT = 50000
 
 def client():
