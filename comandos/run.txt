@@ -6,7 +6,12 @@ ssh -i cloud_ufscar_rsa.dms ubuntu@200.136.252.136
 cd slice-enablers/arquivos
 sh acessar.sh 8
 
-# App1
+# App1 Client
 sudo docker build -t app1-client .
 
+sudo docker run -it --rm app1-client
+
+# App2 Server
 sudo docker build -t app1-server .
+
+sudo docker run -p 50000:50000 app1-server

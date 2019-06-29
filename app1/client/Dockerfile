@@ -6,4 +6,4 @@ WORKDIR /client
 
 RUN apt-get update && apt-get install -y
 
-CMD [ "python", "./client.py" ]
+CMD [ "python3", "./client.py" ]
