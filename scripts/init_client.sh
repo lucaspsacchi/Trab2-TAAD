@@ -16,11 +16,11 @@ sudo systemctl start docker
 sudo systemctl enable docker
 
 # Adiciona a vm como worker no cluster
-cd Trab1-TAAD/
+cd Trab2-TAAD/
 chmod +x /vagrant/token.sh
 sh /vagrant/token.sh
 
 # Criação das imagens
 # Tranferencia de arquivo
-cd app1/
-sudo docker build -t app1-client .
+# cd app1/
+# sudo docker build -t app1-client .
