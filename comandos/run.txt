@@ -1,0 +1,9 @@
+# Pc pessoal
+cd slice-enablers/arquivos
+ssh -i cloud_ufscar_rsa.dms ubuntu@200.136.252.136
+
+# Vm-master
+cd slice-enablers/arquivos
+sh acessar.sh 8
+
+# App1
