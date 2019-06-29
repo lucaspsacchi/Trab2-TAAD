@@ -7,3 +7,6 @@ cd slice-enablers/arquivos
 sh acessar.sh 8
 
 # App1
+sudo docker build -t app1-client .
+
+sudo docker build -t app1-server .
