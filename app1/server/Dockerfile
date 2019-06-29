@@ -4,6 +4,6 @@ COPY . /server
 
 WORKDIR /server
 
-RUN apt install python-pip
+RUN apt-get update && apt-get install -y
 
 CMD [ "python", "./server.py" ]

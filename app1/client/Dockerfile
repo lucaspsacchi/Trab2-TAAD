@@ -4,6 +4,6 @@ COPY . /client
 
 WORKDIR /client
 
-RUN apt install python-pip
+RUN apt-get update && apt-get install -y
 
 CMD [ "python", "./client.py" ]
