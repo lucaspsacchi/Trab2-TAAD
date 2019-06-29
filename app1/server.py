@@ -34,5 +34,4 @@ def server():
       arq.write(var)
 
     arq.close()
-
 server()

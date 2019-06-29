@@ -23,4 +23,6 @@ sudo docker network create -d overlay --subnet 10.0.10.0/24 ClusterNet
 
 # Criação das imagens
 
+
+
 # sudo docker service create --name server_service --network ClusterNet -p 5000:5000 server:latest
