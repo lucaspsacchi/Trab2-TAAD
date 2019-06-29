@@ -4,6 +4,6 @@ COPY . /client
 
 WORKDIR /client
 
-RUN apt-get install python2.7
+RUN apt install python
 
 CMD [ "python", "./client.py" ]

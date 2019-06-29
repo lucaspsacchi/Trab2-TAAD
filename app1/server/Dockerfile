@@ -4,6 +4,6 @@ COPY . /server
 
 WORKDIR /server
 
-RUN apt-get install python2.7
+RUN apt install python
 
 CMD [ "python", "./server.py" ]
