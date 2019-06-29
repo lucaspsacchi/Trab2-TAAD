@@ -25,4 +25,4 @@ sudo docker network create -d overlay --subnet 10.0.10.0/24 ClusterNet
 # cd app1/
 # sudo docker build -t server .
 
-# sudo docker service create --name server_service --network ClusterNet -p 5000:5000 server:latest
+# sudo docker service create --name app1_service --network ClusterNet -p 50000:50000 app1-server

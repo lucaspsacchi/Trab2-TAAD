@@ -3,9 +3,8 @@
 
 #client_sock.py
 import socket
-import os
 
-HOST = '192.168.50.2' #coloca o host do servidor
+HOST = '192.168.50.2'
 PORT = 50000
 
 def client():

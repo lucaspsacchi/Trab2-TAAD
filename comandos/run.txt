@@ -15,3 +15,5 @@ sudo docker run -it --rm app1-client
 sudo docker build -t app1-server .
 
 sudo docker run -p 50000:50000 app1-server
+
+# Criando os serviços ( https://docs.docker.com/engine/reference/commandline/service_create/ )
