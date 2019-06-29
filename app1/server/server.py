@@ -19,7 +19,7 @@ def server():
 
     # Recebe o nome do arquivo que está enviando
     nome, addr = sock.recvfrom(1024)
-    arq = open('../envio/' + nome, 'w')
+    arq = open(nome, 'w')
 
     while True:
       # Define o tamanho máximo da mensagem
