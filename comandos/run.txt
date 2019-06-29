@@ -17,3 +17,4 @@ sudo docker build -t app1-server .
 sudo docker run -it --rm app1-server
 
 # Criando os serviços ( https://docs.docker.com/engine/reference/commandline/service_create/ )
+docker service create --name app1_service --network ClusterNet -p 50000:50000 app1-server
