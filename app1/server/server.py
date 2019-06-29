@@ -4,7 +4,7 @@
 #serv_sock.py
 import socket
 
-HOST = 'localhost'
+HOST = '0.0.0.0'
 PORT = 50000
 
 def server():
@@ -19,7 +19,7 @@ def server():
 
     # Recebe o nome do arquivo que está enviando
     nome, addr = sock.recvfrom(1024)
-    arq = open('server/' + nome, 'w')
+    arq = open('/server/' + nome, 'w')
 
     while True:
       # Define o tamanho máximo da mensagem
