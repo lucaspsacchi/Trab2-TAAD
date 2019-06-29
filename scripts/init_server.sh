@@ -22,7 +22,7 @@ sudo docker swarm init --advertise-addr 192.168.50.2:2377 | sed 5!d > /vagrant/t
 sudo docker network create -d overlay --subnet 10.0.10.0/24 ClusterNet
 
 # Criação das imagens
-
-
+cd app1/
+sudo docker build -t app1-server .
 
 # sudo docker service create --name server_service --network ClusterNet -p 5000:5000 server:latest

@@ -23,4 +23,4 @@ sh /vagrant/token.sh
 # Criação das imagens
 # Tranferencia de arquivo
 cd app1/
-sudo docker build -t client:latest .
+sudo docker build -t app1-client .
