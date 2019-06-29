@@ -4,7 +4,7 @@
 #serv_sock.py
 import socket
 
-HOST = 'localhost'
+HOST = '192.168.50.2'
 PORT = 50000
 
 def server():
