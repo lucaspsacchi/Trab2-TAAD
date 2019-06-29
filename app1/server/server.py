@@ -15,11 +15,11 @@ def server():
   sock.bind((HOST, PORT))
 
   while True:
-    print("Esperando envio...")
+    # print("Esperando envio...")
 
     # Recebe o nome do arquivo que está enviando
     nome, addr = sock.recvfrom(1024)
-    arq = open(nome, 'w')
+    arq = open('server/' + nome, 'w')
 
     while True:
       # Define o tamanho máximo da mensagem
@@ -30,7 +30,7 @@ def server():
         break
       # Decodifica a mensagem em ...
       var = info.decode('utf-8')
-      print('Type:' + str(type(var)) + '\nvar: ' +  var)
+      # print('Type:' + str(type(var)) + '\nvar: ' +  var)
       arq.write(var)
 
     arq.close()
