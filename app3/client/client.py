@@ -14,7 +14,7 @@ def collect_metrics():
         'bytes_tx': 123,
         'tool': 'prometheus'
     }
-    requests.post('http://20.0.0.3:9000/metrics', data=metrics)
+    requests.post('http://192.168.50.2:9000/metrics', data=metrics)
 
 
 schedule.every(15).seconds.do(collect_metrics)
