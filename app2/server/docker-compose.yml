@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 networks:
   default:
@@ -17,19 +17,13 @@ services:
         - 27017:27017
   server:
     build:
-      context: ./server
+      context: .
       dockerfile: Dockerfile
     ports:
-      - 8000:8000
+      - 5000:5000
     command: python server.py
     restart: on-failure
     depends_on:
       - db
     links:
       - db
-  client:
-    build:
-      context: ./client
-      dockerfile: Dockerfile
-    command: python client.py
-    restart: on-failure
