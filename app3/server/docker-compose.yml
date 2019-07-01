@@ -6,7 +6,7 @@ networks:
       config:
         - subnet: 200.0.0.0/16
 services:
-  db:
+  db_app3:
     image: mongo
     restart: always
     environment:
@@ -15,7 +15,7 @@ services:
         - /data/app3/db:/data/db
     ports:
         - 27018:27017
-  server:
+  server_app3:
     tty: true
     build:
       context: .
@@ -25,6 +25,6 @@ services:
     command: python server.py
     restart: on-failure
     depends_on:
-      - db
+      - db_app3
     links:
-      - db
+      - db_app3

@@ -4,9 +4,9 @@ networks:
   default:
     ipam:
       config:
-        - subnet: 10.0.0.0/16
+        - subnet: 100.0.0.0/16
 services:
-  db:
+  db_app2:
     image: mongo
     restart: always
     environment:
@@ -15,15 +15,16 @@ services:
         - /data/app2/db:/data/db
     ports:
         - 27017:27017
-  server:
+  server_app2:
+    tty: true
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - 5000:5000
+      - 6000:6000
     command: python server.py
     restart: on-failure
     depends_on:
-      - db
+      - db_app2
     links:
-      - db
+      - db_app2

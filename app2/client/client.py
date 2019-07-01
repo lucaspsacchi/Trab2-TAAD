@@ -14,7 +14,7 @@ def collect_metrics():
         'bytes_rx': 123,
         'bytes_tx': 123
     }
-    requests.post('http://192.168.15.11:5000/metrics', data=metrics)
+    requests.post('http://192.168.50.2:6000/metrics', data=metrics)
 
 
 schedule.every(1).seconds.do(collect_metrics)

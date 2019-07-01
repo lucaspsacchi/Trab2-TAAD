@@ -3,7 +3,7 @@ from flask_pymongo import PyMongo
 
 app = Flask(__name__)
 app.config['MONGO_DBNAME'] = 'metrics'
-app.config['MONGO_URI'] = 'mongodb://10.0.0.2:27017/metrics'
+app.config['MONGO_URI'] = 'mongodb://100.0.0.2:27017/metrics'
 
 
 mongo = PyMongo(app)
@@ -17,4 +17,4 @@ def insert_metric():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=6000, debug=True)
