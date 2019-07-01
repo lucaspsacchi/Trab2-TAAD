@@ -2,20 +2,20 @@
 groups:
   - name: uso_cpu
     rules:
-    - record: job:uso_cpu:avg_rate5m
-      expr: 100 - (avg by (instance) (irate(node_cpu_seconds_total{job="nodeexporter",mode="idle"}[5m])) * 100)
+    - record: node_exporter:uso_cpu
+      expr: 100 - (avg (irate(node_cpu_seconds_total{node_exporter="nodeexporter",mode="idle"})) by (instance) * 100)
 
   - name: uso_memoria
     rules:
-    - record: job:uso_memoria
-      expr: node_memory_MemTotal_bytes - node_memory_MemFree_bytes - node_memory_Cached_bytes
+    - record: node_exporter:uso_memoria
+      expr: 100 - 100 * (node_memory_MemFree / node_memory_MemTotal)
 
   - name: bytes_rx
     rules:
-    - record: job:bytes_rx:avg_rate5m
-      expr: sum (irate(node_network_receive_bytes_total[5m])) by (instance)
+    - record  : node_exporter:bytes_rx
+      expr: sum (irate(node_network_receive_bytes_total)) by (instance)
 
   - name: bytes_tx
     rules:
-    - record: job:bytes_tx:avg_rate5m
-      expr: sum (irate(node_network_transmit_bytes_total[5m])) by (instance)
+    - record: node_exporter:bytes_tx
+      expr: sum (irate(node_network_transmit_bytes_total)) by (instance)

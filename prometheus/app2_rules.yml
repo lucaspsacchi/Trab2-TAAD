@@ -2,20 +2,20 @@
 groups:
   - name: uso_cpu
     rules:
-    - record: job:uso_cpu:avg_rate5m
-      expr: container_cpu_load_average_10s{name=~".+"}
+    - record: job:uso_cpu
+      expr: container_cpu_load_average_10s{id="/user.slice"}
 
   - name: uso_memoria
     rules:
     - record: job:uso_memoria
-      expr: container_memory_usage_bytes{name=~".+"}
+      expr: container_memory_usage_bytes{id="/user.slice"}
 
   - name: bytes_rx
     rules:
-    - record: job:bytes_rx:sum_rate5m
-      expr: sum by(id, name) (rate(container_network_receive_bytes_total{name=~".+"}[5m]))
+    - record: job:bytes_rx
+      expr: sum (rate(container_network_receive_bytes_total)) by(id, name)
 
   - name: bytes_tx
     rules:
-    - record: job:bytes_tx:sum_rate5m
-      expr: sum by(id, name) (rate(container_network_transmit_bytes_total{name=~".+"}[5m]))
+    - record: job:bytes_tx
+      expr: sum (rate(container_network_transmit_bytes_total)) by(id, name)

@@ -30,3 +30,11 @@ docker ps -a
 # App1 Server abrir terminal do server
 docker exec -it ID_CONTAINER bash
 
+# Requisição CURL
+curl -X POST http://<host-ip>:9090/
+
+# Requisição do node-exporter
+curl -X POST -G http://0.0.0.0:9100/metrics
+
+# Requisição do cadvisor
+curl -X POST http://0.0.0.0:8080/metrics
