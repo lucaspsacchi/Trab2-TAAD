@@ -16,6 +16,7 @@ services:
     ports:
         - 27018:27017
   server:
+    tty: true
     build:
       context: .
       dockerfile: Dockerfile
