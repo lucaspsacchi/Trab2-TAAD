@@ -19,4 +19,4 @@ docker build -t app1-server .
 docker exec -it ID_CONTAINER bash
 
 # Criando os serviços ( https://docs.docker.com/engine/reference/commandline/service_create/ )
-docker service create --name app1_service --network ClusterNet -p 50000:50000/udp app1-server
+docker service create --name app1_service --network ClusterNet -p 6000:6000/udp app1-server
