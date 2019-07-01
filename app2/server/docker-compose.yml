@@ -21,7 +21,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - 6000:6000
+      - 8000:8000
     command: python server.py
     restart: on-failure
     depends_on:
