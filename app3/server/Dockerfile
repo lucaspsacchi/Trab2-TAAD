@@ -4,5 +4,5 @@ WORKDIR /tmp
 COPY deps.txt deps.txt
 RUN pip install -r deps.txt
 
-ADD . /server
-WORKDIR /server
+ADD . .
+WORKDIR .

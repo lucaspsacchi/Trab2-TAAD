@@ -14,10 +14,10 @@ def collect_metrics():
         'bytes_tx': 123,
         'tool': 'prometheus'
     }
-    requests.post('http://192.168.50.2:9000/metrics', data=metrics)
+    requests.post('http://192.168.15.11:7000/metrics', data=metrics)
 
 
-schedule.every(15).seconds.do(collect_metrics)
+schedule.every(1).seconds.do(collect_metrics)
 
 if __name__ == '__main__':
     while True:
