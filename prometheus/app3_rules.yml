@@ -1,0 +1,21 @@
+# Metricas das vms
+groups:
+  - name: uso_cpu
+    rules:
+    - record: job:uso_cpu:avg_rate5m
+      expr: 100 - (avg by (instance) (irate(node_cpu_seconds_total{job="nodeexporter",mode="idle"}[5m])) * 100)
+
+  - name: uso_memoria
+    rules:
+    - record: job:uso_memoria
+      expr: node_memory_MemTotal_bytes - node_memory_MemFree_bytes - node_memory_Cached_bytes
+
+  - name: bytes_rx
+    rules:
+    - record: job:bytes_rx:avg_rate5m
+      expr: sum (irate(node_network_receive_bytes_total[5m])) by (instance)
+
+  - name: bytes_tx
+    rules:
+    - record: job:bytes_tx:avg_rate5m
+      expr: sum (irate(node_network_transmit_bytes_total[5m])) by (instance)

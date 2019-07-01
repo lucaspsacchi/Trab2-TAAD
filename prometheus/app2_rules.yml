@@ -1,0 +1,21 @@
+# Metricas dos containers
+groups:
+  - name: uso_cpu
+    rules:
+    - record: job:uso_cpu:avg_rate5m
+      expr: container_cpu_load_average_10s{name=~".+"}
+
+  - name: uso_memoria
+    rules:
+    - record: job:uso_memoria
+      expr: container_memory_usage_bytes{name=~".+"}
+
+  - name: bytes_rx
+    rules:
+    - record: job:bytes_rx:sum_rate5m
+      expr: sum by(id, name) (rate(container_network_receive_bytes_total{name=~".+"}[5m]))
+
+  - name: bytes_tx
+    rules:
+    - record: job:bytes_tx:sum_rate5m
+      expr: sum by(id, name) (rate(container_network_transmit_bytes_total{name=~".+"}[5m]))

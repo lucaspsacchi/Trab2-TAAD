@@ -15,8 +15,18 @@ docker run -it --rm app1-client
 # App1 Server Build
 docker build -t app1-server .
 
+# Criando os serviços ( https://docs.docker.com/engine/reference/commandline/service_create/ )
+docker service create --name app1_service --network ClusterNet -p 6000:6000/udp app1-server
+
+# Listar serviços do master
+docker service ls
+
+# Listar containers rodando
+docker ps
+
+# Listar container rodando/rodados
+docker ps -a
+
 # App1 Server abrir terminal do server
 docker exec -it ID_CONTAINER bash
 
-# Criando os serviços ( https://docs.docker.com/engine/reference/commandline/service_create/ )
-docker service create --name app1_service --network ClusterNet -p 6000:6000/udp app1-server
