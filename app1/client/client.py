@@ -5,7 +5,7 @@
 import socket
 
 HOST = '192.168.50.2'
-PORT = 50000
+PORT = 6000
 
 def client():
 
